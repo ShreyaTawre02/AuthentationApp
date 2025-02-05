@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %} About Us {% endblock %}
+{% block content %}
+<h2>About Us</h2>
+<p>Welcome! This is a private page accessible only after login.</p>
+<form method="POST" action="{% url 'truncate_users' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Truncate User Table</button>
+</form>
+{% endblock %}
